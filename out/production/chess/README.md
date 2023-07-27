@@ -1,2 +1,2 @@
-# chess
-Java swing chess with oop
+# app
+Java swing app with oop

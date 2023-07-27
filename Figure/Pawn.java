@@ -1,7 +1,10 @@
 package Figure;
 
+import Deck.Deck;
 import java.awt.*;
+import java.lang.reflect.Type;
 import java.util.Set;
+import java.util.Stack;
 
 public class Pawn extends Figure {
 
@@ -61,7 +64,7 @@ public class Pawn extends Figure {
 
     public void Step(String[][] deck, Set<Point> enabled_move, Point step){
         if (enabled_move.contains(step)){
-            history.push(getCord());
+            //history.push(getCord());
             deck[getCord().x][getCord().y] = "";
             deck[step.x][step.y] = String.valueOf(getType());
         }

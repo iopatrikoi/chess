@@ -3,30 +3,37 @@ package App;
 import javax.swing.*;
 
 public class App extends JFrame{
+    private static final int  WIDTH;
+    private static final int HEIGHT;
 
-    private final int  WIDTH;
-    private final int HEIGHT;
-    public App(int WIDTH, int HEIGHT, String Name){
+    static {
+        WIDTH = 640;
+        HEIGHT = 640;
+    }
+    public App(String Name){
         super(Name);
-        this.WIDTH = WIDTH;
-        this.HEIGHT = HEIGHT;
+        Mouse mouse = new Mouse();
+        this.addMouseListener(mouse);
     }
 
     public void run(){
-
+        this.setSize(WIDTH,HEIGHT);
+        this.setVisible(true);
+        this.setResizable(false);
     }
 
+    public static int getHEIGHT() {
+        return App.HEIGHT;
+    }
+
+    public static int getWIDTH() {
+        return App.WIDTH;
+    }
 
     public static void main(String[] args)
     {
-        new App(1280,720,"test");
+        App chess = new App("test");
+        chess.run();
     }
 
-    public int getHEIGHT() {
-        return HEIGHT;
-    }
-
-    public int getWIDTH() {
-        return WIDTH;
-    }
 }

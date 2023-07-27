@@ -18,9 +18,6 @@ public class Figure {
         KNIGHT
     }
     private final Type type;
-
-    protected Stack<Point> history;
-
     protected Set<Point> pattern_move;
     private Point cord;
 
